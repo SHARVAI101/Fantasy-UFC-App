@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_qr_reader/qrcode_reader_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ScanCodePage extends StatefulWidget {
   @override
@@ -40,20 +41,86 @@ class _ScanCodePageState extends State<ScanCodePage> {
       }
       saveData2();
 
-      await showCupertinoDialog(
+      showDialog(
         context: context,
-        builder: (context) {
-          return CupertinoAlertDialog(
-            title: Text("NEW FIGHTER UNLOCKED!"),
-            content: Text(this_fighter_data["name"]),
-            actions: <Widget>[
-              CupertinoDialogAction(
-                child: Text("Continue"),
-                onPressed: () => Navigator.pop(context),
-              )
-            ],
-          );
-        },
+        builder: (ctx) =>
+            AlertDialog(
+              backgroundColor: Color(0xFF2D2D2D),
+              title: Text(
+                "NEW FIGHTER UNLOCKED!",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.montserrat(
+                    color: Colors.white,
+                    fontSize: 30
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0)),
+              // contentPadding: EdgeInsets.only(top: 0,left:20,right:20,bottom:10),
+              content: Wrap(
+                // scrollDirection: Axis.vertical,
+                // direction: Axis.vertical,
+                children: [
+                  Image.network(
+                    this_fighter_data["imageURL"],
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(height: 40),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        this_fighter_data["name"],
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            fontSize: 18
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Flavor: "+this_fighter_data["flavor"],
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.montserrat(
+                            color: Colors.redAccent,
+                            fontSize: 15
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              actions: [
+                SizedBox(
+                  height: 50,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
+                  child: RaisedButton(
+                    color: Color(0xff2d3436),
+                    textColor: Colors.white,
+                    onPressed: () {
+                      Navigator.of(ctx).pop();
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0)),
+                    child: Text(
+                      "CONTINUE",
+                      style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
       );
       qrViewKey.currentState.startScan();
     }

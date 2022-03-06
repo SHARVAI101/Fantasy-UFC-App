@@ -205,6 +205,55 @@ class _FighterPageState extends State<FighterPage> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20),
+                    child: SizedBox(
+                      height: 70,
+                      child: FlatButton(
+                        // color: Colors.white,
+                        color: Color(0xff3a3a3a),
+                        textColor: Colors.grey[200],
+                        onPressed: () {
+                          // Navigator.of(ctx).pop
+                        },
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(width:15),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Conor McGregor vs Eddie Alvarez",
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.montserrat(
+                                        color: Colors.grey[200],
+                                        fontSize: 15
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 0.0),
+                                    child: Text(
+                                      "Result: Won by TKO",
+                                      style: GoogleFonts.montserrat(
+                                          color: Colors.grey[500],
+                                          fontSize: 13
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

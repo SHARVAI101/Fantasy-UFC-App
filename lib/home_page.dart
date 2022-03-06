@@ -363,7 +363,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        "Sharvai",
+                        "Jessica",
                         style: GoogleFonts.montserrat(
                           // fontFamily: 'FreeSans',
                             fontSize: 35,
