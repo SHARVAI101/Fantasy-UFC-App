@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1010126673423",
+    "project_id": "constellation-brands",
+    "storage_bucket": "constellation-brands.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010126673423:android:e2be6bbe5b07a58130b57a",
+        "android_client_info": {
+          "package_name": "com.codingdojo.constellation_brands_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010126673423-7299qpham2i078gt18fjajoq6tj94al6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUHHC_TOAOIn4MStymrwR35CIgneb-DZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010126673423-7299qpham2i078gt18fjajoq6tj94al6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
